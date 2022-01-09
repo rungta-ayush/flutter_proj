@@ -11,7 +11,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   List<disNameModel> names1 = new List<disNameModel>();
   bool _loading = true;
+  
   @override
+  void initstate() {
+    super.initState();
+    getNames();
+  }
   getNames() async {
     districtNames disnameClass = districtNames();
     await disnameClass.getDisNames();
